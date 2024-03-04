@@ -1,0 +1,209 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --background: hsla(220, 17%, 7%, 1);
+    --banner-background: hsla(250, 6%, 20%, 1);
+    --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+    --on-background: hsla(220, 100%, 95%, 1);
+    --on-surface: hsla(250, 100%, 95%, 1);
+    --on-surface-variant: hsla(250, 1%, 44%, 1);
+    --primary: hsla(349, 100%, 43%, 1);
+    --primary-variant: hsla(349, 69%, 51%, 1);
+    --rating-color: hsla(44, 100%, 49, 1);
+    --surface: hsla(250, 13%, 11%, 1);
+    --text-color: hsla(250, 2%, 59%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+
+    --banner-overlay: 90deg, hsl(220, 17%, 7%)0%, hsla(220, 17%, 7%, 0.5)100%;
+    --botton-overlay: 180deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1);
+
+    --ff-dm-sans: 'DM Sans', sans-serif;
+
+    --fs-heading: 4rem;
+    --fs-title-lg: 2.6rem;
+    --fs-title: 2rem;
+    --fs-body: 1.8rem;
+    --fs-button: 1.5rem;
+    --fs-label: 1.4rem;
+
+    --weight-bold: 700;
+
+    --shadow-1: 0 1px 4px hsla(0, 0%, 0%, 0.75);
+    --shadow-2: 0 2px 4px hsla(350, 100%, 43%, 0.3);
+
+    --radius-4: 4px;
+    --radius-8: 8px;
+    --radius-16: 16px;
+    --radius-24: 24px;
+    --radius-36: 36px;
+
+    --transition-short: 250ms ease;
+    --transiton-long: 500ms ease;
+}
+
+
+ 
+
+  
+  
+  li{
+    list-style: none;
+  }
+  
+  a,
+  img,
+  span,
+  iframe,
+  button{ display: block;}
+  
+  a{
+    color:inherit;
+    text-decoration: none;
+  }
+  
+  img{height:auto,
+    }
+  
+  input,
+  button{
+    background:none;
+    border:none;
+    font:inherit;
+    color:inherit;
+  }
+  input{
+    width:100%
+  }
+  
+  button{
+    text-align: left;
+    cursor:pointer;
+  }
+
+ body{
+    margin:0;
+    color:var(--on-background);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    overflow: hidden;
+ }
+
+ ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: var(--radius-8);
+    background-color: var(--banner-background);
+}
+
+
+
+  
+  .sidebar-inner{
+    display: grid;
+    grid:20px;
+    /* padding-block:36px; */
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb{background-color: transparent;}
+  
+  .sidebar:is(:hover, :focus-within)::-webkit-scrollbar-thumb{
+    background-color: var(--banner-background);
+  }
+  
+  .sidebar::-webkit-scrollbar-button{height:16px;}
+  
+  .sidebar-list,
+  .sidebar-footer {
+     padding-inline:36px;
+     cursor: pointer;
+   }
+  
+  .sidebar-link {
+    color:var(--on-surface-variant);
+    transition: var(--transition-short);
+  }
+  
+  .sidebar-link:is(:hover, :focus-visible){color :var(--on-background)}
+  
+  .sidebar-list .title{ margin-block-end:8px}
+  
+  .sidebar-footer{
+    border-block-start: 1px solid var(--banner-background);
+    padding-block-start:28px;
+    margin-block-start:16px;
+  }
+  
+  .copyright {
+   color:var(--on-surface-variant);
+   margin-block-end:20px;
+  }
+  
+  .copyright a{
+   display: inline-block;
+  }
+  
+  .overlay{
+   position:fixed;
+   top:96px;
+   left:0px;
+   width:100%;
+   background:var(--background);
+   opacity: 0;
+   pointer-events: none;
+   transition: var(--transition-short);
+   z-index: 3;
+  }
+  
+  .overlay.active {
+   opacity: 0.5;
+   pointer-events: all;
+  }
+  
+html{
+    font-family: 'DM Sans', sans-serif;
+    font-size:10px;
+    scroll-behavior:smooth;
+  
+ }
+
+ @media(min-width:1200px){
+  /* .header {padding:28px 56px} */
+
+  .menu-btn,
+  .overlay {display:none}
+
+  main{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+  }
+
+  .sidebar{
+    position:static;
+    visibility: visible;
+    border-block-start: 0;
+    height:calc(100vh - 104px);
+  }
+
+  .sidebar.active {transform: none;}
+
+  .sidebar-list,
+  .sidebar-footer {padding-inline:56px}
+
+  .container{
+    height: calc(100vh - 104px);
+    border-top-left-radius:var(--radius-36);
+  }
+
+  .backdrop-image{border-top-left-radius: var(--radius-36);}
+
+  .banner-content{left:100px}
+
+  .search-modal{
+    top:104px;
+    padding:60px;
+  }
+}
+ 
